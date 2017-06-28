@@ -1,0 +1,47 @@
+
+<style>
+    .sec {
+    float: left;
+        padding-left: 100px;
+        padding-right: 100px;
+        padding-bottom: 100px;
+}
+
+.sec section {
+    width: 50%;
+    float: left;
+
+}
+    form {
+    clear: left;
+}
+</style>
+{#{% load static %}#}
+{#<head>#}
+{#    <link href={% static profile.css %} rel="stylesheet" type=text/css>#}
+{#</head>#}
+<h1>{{user}}</h1>
+<section class="sec">
+<h3>Created Groups</h3>
+<ul>
+{% for group in created_groups %}
+    <li><a href={% url "messaging:group" group.id %}>{{group.name}}</a></li>
+{% endfor %}
+</section>
+<section class="sec">
+<h3>All Groups</h3>
+{% for group in all_groups%}
+    <li><a href={% url "messaging:group" group.id %}>{{group.name}}</a></li>
+{% endfor %}
+</section>
+<section class="sec">
+<h3>joined Groups</h3>
+<ul>
+{% for group in my_groups%}
+    <li><a href={% url "messaging:group" group.id %}>{{group.name}}</a></li>
+{% endfor %}
+</section>
+<form method="get" action={% url "authsystem:logout" %}>
+    <button type="submit">Log Out</button>
+</form>
+</ul>

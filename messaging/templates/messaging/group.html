@@ -1,0 +1,16 @@
+
+<h1>{{group}}</h1>
+<section>
+<h3>Messages</h3>
+<ul>
+{% for msg in message %}
+    <li>{{msg.text }} <br>{{ " by: " }} {{ msg.author.username }}</li>
+{% endfor %}
+</section>
+
+<form method='post' action="">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="hidden" name="group_id" value = {{ group_id }}/>
+    <input type="submit" value="Send" />
+</form>
+
