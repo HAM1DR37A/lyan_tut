@@ -1,16 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
 
-<h1>{{group}}</h1>
-<section>
-<h3>Messages</h3>
-<ul>
-{% for msg in message %}
-    <li>{{msg.text }} <br>{{ " by: " }} {{ msg.author.username }}</li>
-{% endfor %}
-</section>
+{% block styles %}
+    {{ block.super }}
+{% endblock %}
 
-<form method='post' action="">{% csrf_token %}
-    {{ form.as_p }}
-    <input type="hidden" name="group_id" value = {{ group_id }}/>
-    <input type="submit" value="Send" />
-</form>
 
+{% block script %}
+{{ block.super }}
+    <script src="{% static "messaging/group/js/group_script.js" %}"></script>
+{% endblock %}
+
+{% block pageheader %}
+    <h1 class="pageheader">{{ group.name }}</h1>
+{% endblock %}
+{% block sidenavitem %}
+    <button>
+        <a href="{% url "messaging:profile" %}">Home</a>
+    </button>
+    <form method="get" action={% url "authsystem:logout" %}>
+        <button type="submit">Log Out</button>
+    </form>
+{% endblock %}
+
+{% block content %}
+    <div class="groupsection">
+        <section class="msgsection">
+            <ul>
+                {% for msg in message %}
+                    {% if msg.author == request.user %}
+                        <div class='selfmsg'>
+                            <div>{{ msg.text }}
+                                <br><br>{{ msg.author.username }} {{ " at " }} {{ msg.get_date }}
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class='membermsg'>
+                            <div>{{ msg.text }}
+                                <br><br>{{ msg.author.username }} {{ " at " }} {{ msg.get_date }}
+                            </div>
+                        </div>
+                    {% endif %}
+
+                {% endfor %}
+            </ul>
+        </section>
+
+        <form class='msginput' method='post' action="">{% csrf_token %}
+            {{ form.as_p }}
+            <input type="hidden" name="group_id" value="{{ group.id }}"/>
+            <input id="sendButtton" type="submit" value="Send"/>
+        </form>
+    </div>
+{% endblock %}

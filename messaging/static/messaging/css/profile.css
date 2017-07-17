@@ -1,8 +1,215 @@
-.sec {
-    float: left;
-}
 
-.sec section {
-    width: 50%;
-    float: left;
-}
+/*.container{*/
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+    /*width: 1150px;*/
+/*}*/
+
+/*.sec {*/
+    /*float: left;*/
+    /*height: 500px;*/
+    /*padding-bottom: 100px;*/
+/*}*/
+
+
+/*body{*/
+    /*margin: 0px;*/
+/*}*/
+/*h1{*/
+    /*font-family:'Didact Gothic';*/
+    /*background-color: #f0f0ff;*/
+    /*border-bottom: 1px solid lightgray;*/
+    /*text-align: center;*/
+    /*margin: 0;*/
+/*}*/
+/*.sec h3{*/
+    /*font-family:'Didact Gothic';*/
+    /*display: inherit;*/
+    /*text-align: center;*/
+    /*width: 100%;*/
+/*}*/
+/*.sec ul{*/
+    /*border-radius: 2%;*/
+    /*list-style-type: none;*/
+    /*width: 370px;*/
+    /*height: 100%;*/
+    /*border: 1px solid lightgray;*/
+    /*padding: 0px;*/
+    /*overflow-y: scroll;*/
+
+/*}*/
+/*form {*/
+    /*clear: left;*/
+/*}*/
+
+
+/*.sidenav {*/
+    /*height: 100%;*/
+    /*width: 0;*/
+    /*position: fixed;*/
+    /*z-index: 1;*/
+    /*top: 20px;*/
+    /*left: 0;*/
+    /*background-color: #f0f0ff;*/
+    /*overflow-x: hidden;*/
+    /*transition: 0.5s;*/
+    /*padding-top: 60px;*/
+/*}*/
+/*.sidenav form{*/
+    /*margin: 0px;*/
+/*}*/
+
+/*.sidenav button{*/
+    /*padding: 0px;*/
+    /*text-decoration: none;*/
+    /*font-family: "Didact Gothic";*/
+    /*margin: 0px;*/
+    /*height: 33px;*/
+    /*width: 100%;*/
+    /*color: black;*/
+    /*background-color: #f0f0ff;*/
+    /*border-bottom: 1px solid lightgray;*/
+    /*border-left: 0px;*/
+    /*border-top: 0px;*/
+    /*border-right: 0px;*/
+    /*display: block;*/
+    /*transition: 0.3s;*/
+/*}*/
+/*.sidenav button:hover{*/
+
+    /*padding: 0px;*/
+    /*text-decoration: none;*/
+    /*font-family: "Didact Gothic";*/
+    /*margin: 0px;*/
+    /*height: 33px;*/
+    /*width: 100%;*/
+    /*color: black;*/
+    /*background-color: #def7cb;*/
+    /*border-bottom: 1px solid lightgray;*/
+    /*border-left: 0px;*/
+    /*border-top: 0px;*/
+    /*border-right: 0px;*/
+    /*display: block;*/
+    /*transition: 0.3s;*/
+/*}*/
+/*.sidenav a{*/
+    /*color: #4c4c4c;*/
+/*}*/
+
+/*/!*.sidenav a:hover, .offcanvas a:focus{*!/*/
+    /*/!*color: #f1f1f1;*!/*/
+/*/!*}*!/*/
+/*span{*/
+    /*display: block;*/
+    /*right: 0;*/
+    /*top: 0;*/
+    /*width: 100%;*/
+    /*cursor: pointer;*/
+    /*font-family: "Didact Gothic";*/
+    /*font-size: 30px;*/
+/*}*/
+/*.sidenav .closebtn {*/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*text-decoration: none;*/
+    /*right: 25px;*/
+    /*font-size: 36px;*/
+    /*margin-left: 50px;*/
+/*}*/
+/*::-webkit-scrollbar-track*/
+/*{*/
+	/*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);*/
+	/*border-radius: 20px;*/
+	/*background-color: rgba(202, 202, 202, 0.98);*/
+/*}*/
+
+/*::-webkit-scrollbar*/
+/*{*/
+	/*width: 5px;*/
+	/*background-color: white;*/
+/*}*/
+
+/*::-webkit-scrollbar-thumb*/
+/*{*/
+	/*border-radius: 10px;*/
+	/*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);*/
+	/*background-color: white;*/
+/*}*/
+/*.groupcover{*/
+    /*display: block;*/
+    /*margin: 0;*/
+    /*background: white;*/
+    /*padding: 0;*/
+    /*border-bottom: 1px  gray;*/
+    /*width: 100%;*/
+    /*height: 100px;*/
+    /*position: relative;*/
+    /*font-family:'Didact Gothic';*/
+
+/*}*/
+/*.grouptitle{*/
+    /*display: inherit;*/
+    /*background: inherit;*/
+    /*font-weight: bold;*/
+    /*height: 40px;*/
+    /*width: 250px;*/
+    /*padding-left: 20px;*/
+    /*padding-top: 5px;*/
+    /*position: absolute;*/
+    /*left: 50px;*/
+    /*top: 0;*/
+/*}*/
+/*.latestdate{*/
+    /*display: inherit;*/
+    /*height: 50px;*/
+    /*width: 50px;*/
+    /*float: right;*/
+    /*position: absolute;*/
+    /*top: 25px;*/
+    /*right: 0;*/
+/*}*/
+/*.latestmsg{*/
+    /*display: inherit;*/
+    /*font-weight: 100;*/
+    /*height: 50px;*/
+    /*color: black;*/
+    /*width: 230px;*/
+    /*left: 40px;*/
+    /*padding: 15px 10px;*/
+    /*margin: 0px 20px;*/
+    /*position: absolute;*/
+    /*border-bottom: 1px solid gray;*/
+    /*bottom: 0;*/
+/*}*/
+/*.groupcover:hover{*/
+    /*background-color: #f0f0ff;*/
+    /*font-size: 110%;*/
+    /*color: #e7e567;*/
+    /*padding: 0;*/
+    /*margin: 0;*/
+    /*/!*text-align: center;*!/*/
+    /*text-decoration: none;*/
+    /*display: inherit;*/
+    /*transition: 0.3s;*/
+/*}*/
+/*.groupimg{*/
+    /*border-radius: 50%;*/
+    /*display: inherit;*/
+    /*height: 50px;*/
+    /*width: 50px;*/
+    /*float: right;*/
+    /*position: absolute;*/
+    /*top: 25px;*/
+    /*left: 2px;*/
+/*}*/
+/*.sec a{*/
+    /*font-family:'Didact Gothic';*/
+    /*color: #0fb9ff;*/
+    /*text-align: left;*/
+    /*text-decoration: none;*/
+    /*display: block;*/
+/*}*/
+/*/!*@media screen and (max-height: 450px) {*!/*/
+  /*/!*.sidenav {padding-top: 15px;}*!/*/
+  /*/!*.sidenav a {font-size: 18px;}*!/*/
+/*/!*}*!/*/

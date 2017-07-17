@@ -1,10 +1,19 @@
-{% block title %}Login{% endblock %}
+{% extends "base.html" %}
+{% load static %}
+{% block script %}
+{{  block.super }}
+{% endblock %}
+
+{% block sidenavitem %}
+    <button >
+        <a href="{% url "authsystem:signup" %}" >Sign Up</a>
+    </button>
+{% endblock %}
 
 {% block content %}
-  <h2>Login</h2>
-  <form method="post">
+  <form method="post" class="loginform">
     {% csrf_token %}
-    {{ form.as_p }}
+    {{ form.as_p  }}
     <button type="submit">Login</button>
   </form>
 {% endblock %}

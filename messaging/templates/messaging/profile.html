@@ -1,47 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+{% block script %}
+    {{ block.super }}
+{% endblock %}
+{% block pageheader %}
+    <h1 class="pageheader">{{user}}</h1>
+{% endblock %}
 
-<style>
-    .sec {
-    float: left;
-        padding-left: 100px;
-        padding-right: 100px;
-        padding-bottom: 100px;
-}
+{% block sidenavitem %}
+    <form method="get" action={% url "messaging:create-group" %}>
+        <button type="submit">Create Group</button>
+    </form>
+    <form method="get" action={% url "authsystem:logout" %}>
+        <button type="submit">Log Out</button>
+    </form>
+{% endblock %}
 
-.sec section {
-    width: 50%;
-    float: left;
-
-}
-    form {
-    clear: left;
-}
-</style>
-{#{% load static %}#}
-{#<head>#}
-{#    <link href={% static profile.css %} rel="stylesheet" type=text/css>#}
-{#</head>#}
-<h1>{{user}}</h1>
-<section class="sec">
-<h3>Created Groups</h3>
-<ul>
-{% for group in created_groups %}
-    <li><a href={% url "messaging:group" group.id %}>{{group.name}}</a></li>
-{% endfor %}
-</section>
-<section class="sec">
-<h3>All Groups</h3>
-{% for group in all_groups%}
-    <li><a href={% url "messaging:group" group.id %}>{{group.name}}</a></li>
-{% endfor %}
-</section>
-<section class="sec">
-<h3>joined Groups</h3>
-<ul>
-{% for group in my_groups%}
-    <li><a href={% url "messaging:group" group.id %}>{{group.name}}</a></li>
-{% endfor %}
-</section>
-<form method="get" action={% url "authsystem:logout" %}>
-    <button type="submit">Log Out</button>
-</form>
-</ul>
+{% block content %}
+    <div id="'myContainer" class="container">
+        <section>
+            <h3>Created Groups</h3>
+            <ul>
+                {% for group in request.user.created_groups.all|dictsortreversed:"last_msg_date" %}
+                    <a href={% url "messaging:group" group.id %}>
+                        <div class="groupcover">
+                            <img class="groupimg" src="{{ group.image.url }}"/>
+                            <div class="grouptitle">{{group.name}}</div>
+                            <div class="latestdate">{{ group.group_messages.latest.get_date }}</div>
+                            <div class="latestmsg">{{ group.group_messages.latest.get_text}}</div>
+                            <div class="bottomborder"></div>
+                        </div>
+                    </a>
+                {% endfor %}
+            </ul>
+        </section>
+        <section >
+            <h3>All Groups</h3>
+            <ul>
+                {% for group in all_groups|dictsortreversed:"last_msg_date"%}
+                    <a href={% url "messaging:group" group.id %}>
+                        <div class="groupcover">
+                            <img class="groupimg" src="{{ group.image.url }}"/>
+                            <div class="grouptitle">{{group.name}}</div>
+                            <div class="latestdate">{{ group.group_messages.latest.get_date }}</div>
+                            <div class="latestmsg">{{ group.group_messages.latest.get_text}}</div>
+                            <div class="bottomborder"></div>
+                        </div>
+                    </a>
+                {% endfor %}
+            </ul>
+        </section>
+        <section >
+            <h3>joined Groups</h3>
+            <ul>
+                {% for group in request.user.joined_groups.all|dictsortreversed:"last_msg_date" %}
+                    <a href={% url "messaging:group" group.id %}>
+                        <div class="groupcover">
+                            <img class="groupimg" src="{{ group.image.url }}"/>
+                            <div class="grouptitle">{{group.name}}</div>
+                            <div class="latestdate">{{ group.group_messages.latest.get_date }}</div>
+                            <div class="latestmsg">{{ group.group_messages.latest.get_text}}</div>
+                            <div class="bottomborder"></div>
+                        </div>
+                    </a>
+                {% endfor %}
+            </ul>
+        </section>
+    </div>
+{% endblock %}
