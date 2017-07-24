@@ -1,0 +1,53 @@
+{% load static %}
+
+<head>
+    {% block styles %}
+        <link href="{% static 'main.css' %}" rel="stylesheet" type=text/css>
+        <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
+        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    {% endblock %}
+
+
+    {% block script %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+             }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+             }
+        </script>
+    {% endblock %}
+</head>
+
+<body>
+{% block pageheader %}
+{% endblock %}
+
+<span onclick="openNav()">&#9776; Menu</span>
+
+
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#x21E4;</a>
+    {% block sidenavitem %}
+    {% endblock %}
+    {#    <button >#}
+    {#    <a href="{% url "messaging:profile" %}" >Home</a>#}
+    {#    </button>#}
+    {#    <form method="get" action={% url "authsystem:logout" %}>#}
+    {#        <button type="submit">Log Out</button>#}
+    {#    </form>#}
+</div>
+
+
+<script src=>
+
+
+</script>
+
+<div>
+    {% block content %}
+    {% endblock %}
+</div>
+</body>

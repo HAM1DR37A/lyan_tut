@@ -1,0 +1,33 @@
+.container{
+  margin-left: auto;
+  margin-right: auto;
+  width: 1150px;
+  section {
+    float: left;
+    height: 500px;
+    padding-bottom: 100px;
+    h3{
+      font-family:'Didact Gothic';
+      display: inherit;
+      text-align: center;
+      width: 100%;
+    }
+    ul{
+      border-radius: 2%;
+      list-style-type: none;
+      width: 370px;
+      height: 100%;
+      border: 1px solid lightgray;
+      padding: 0px;
+      overflow-y: scroll;
+
+    }
+    a{
+      font-family:'Didact Gothic';
+      text-align: left;
+      text-decoration: none;
+      display: block;
+    }
+  }
+}
+

@@ -3,6 +3,7 @@
 
 {% block script %}
     {{ block.super }}
+    <script src="{% static "authsystem/js/signup_script.js" %}"></script>
 {% endblock %}
 {% block sidenavitem %}
     <button >
@@ -11,8 +12,13 @@
 {% endblock %}
 
 {% block content %}
-<form action="" method="post" class="signupform">{% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Save" />
+<form id="myForm" method="post" class="signupform">{% csrf_token %}
+    <input type="text"  name="username" placeholder="Username">
+    <input type="text"  name="first_name" placeholder="First Name">
+    <input type="text"  name="last_name" placeholder="Last Name">
+    <input type="password"  name="password" placeholder="Password">
+    <input type="password"  name="password2" placeholder="Re-Password">
+
+    <input type="submit" value="Save" id="formbutton"/>
 </form>
 {% endblock %}

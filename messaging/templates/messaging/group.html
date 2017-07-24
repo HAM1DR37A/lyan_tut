@@ -28,16 +28,16 @@
         <section class="msgsection">
             <ul>
                 {% for msg in message %}
-                    {% if msg.author == request.user %}
+                    {% if msg.author == request.user.username %}
                         <div class='selfmsg'>
                             <div>{{ msg.text }}
-                                <br><br>{{ msg.author.username }} {{ " at " }} {{ msg.get_date }}
+                                <br><br>{{ msg.author }} {{ " at " }} {{ msg.date}}
                             </div>
                         </div>
                     {% else %}
                         <div class='membermsg'>
                             <div>{{ msg.text }}
-                                <br><br>{{ msg.author.username }} {{ " at " }} {{ msg.get_date }}
+                                <br><br>{{ msg.author}} {{ " at " }} {{ msg.date }}
                             </div>
                         </div>
                     {% endif %}
@@ -46,9 +46,9 @@
             </ul>
         </section>
 
-        <form class='msginput' method='post' action="">{% csrf_token %}
-            {{ form.as_p }}
-            <input type="hidden" name="group_id" value="{{ group.id }}"/>
+        <form id="msgForm" class='msginput' >{% csrf_token %}
+            <textarea id="id_text" name="text" placeholder="Type Here to Send Message... "></textarea>
+            <input id="g_id" type="hidden" name="group" value="{{ group_id }}"/>
             <input id="sendButtton" type="submit" value="Send"/>
         </form>
     </div>

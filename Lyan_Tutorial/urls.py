@@ -21,5 +21,6 @@ from Lyan_Tutorial import settings
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^auth/', include('authsystem.urls')),
-    url(r'^messaging/', include('messaging.urls'))
+    url(r'^messaging/', include('messaging.urls')),
+    url(r'^rest/', include('rest_framework.urls', namespace='rest_framework'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

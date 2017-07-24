@@ -20,6 +20,11 @@ class Group(models.Model):
     image = models.ImageField(upload_to='group_pics/',
                               default='group_pics/no-img.jpg')
     last_msg_date = models.DateTimeField(default=timezone.now)
+
+    def save(self, *args, **kwargs):
+        super(Group, self).save(*args, **kwargs)
+        self.members.add(self.creator)
+
     def __str__(self):
         return self.name
 

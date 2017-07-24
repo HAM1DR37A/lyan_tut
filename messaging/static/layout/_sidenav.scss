@@ -1,0 +1,75 @@
+body {
+  span {
+      display: block;
+      right: 0;
+      top: 0;
+      width: 100%;
+      cursor: pointer;
+      font-family: "Didact Gothic";
+      font-size: 30px;
+    }
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #f0f0ff;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    form {
+      margin: 0px;
+    }
+    button {
+      padding: 0px;
+      text-decoration: none;
+      font-family: "Didact Gothic";
+      font-size: 18px;
+      margin: 0px;
+      height: 33px;
+      width: 100%;
+      color: black;
+      background-color: #f0f0ff;
+      border-bottom: 1px solid lightgray;
+      border-left: 0px;
+      border-top: 0px;
+      border-right: 0px;
+      display: block;
+      transition: 0.3s;
+
+      &:hover {
+        padding: 0px;
+        text-decoration: none;
+        font-family: "Didact Gothic";
+        margin: 0px;
+        height: 33px;
+        width: 100%;
+        color: black;
+        background-color: #def7cb;
+        border-bottom: 1px solid lightgray;
+        border-left: 0px;
+        border-top: 0px;
+        border-right: 0px;
+        display: block;
+        transition: 0.3s;
+      }
+    }
+
+    a {
+      color: #4c4c4c;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+    }
+    .closebtn {
+      position: absolute;
+      top: 0;
+      text-decoration: none;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+  }
+}

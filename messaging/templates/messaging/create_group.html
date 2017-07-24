@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block script %}
+    {{ block.super }}
+{% endblock %}
+
+{% block sidenavitem %}
+    <button >
+    <a href="{% url "messaging:profile" %}" >Home</a>
+    </button>
+    <form method="get" action={% url "authsystem:logout" %}>
+        <button type="submit">Log Out</button>
+    </form>
+{% endblock %}
+
+{% block content %}
+<form action="" method="post" class="loginform">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Save" />
+</form>
+{% endblock %}

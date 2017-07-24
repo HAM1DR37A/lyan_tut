@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block script %}
+    {{ block.super }}
+{% endblock %}
+{% block sidenavitem %}
+    {{ block.super }}
+
+    <button >
+    <a href="{% url "messaging:profile" %}" >Home</a>
+    </button>
+    <form method='post' action="{% url "messaging:join-group" %}" >{% csrf_token %}
+        <input type="hidden" name="group_id" value="{{ group.id }}"/>
+        <button type="submit" >Join</button>
+    </form>
+    <form method="get" action={% url "authsystem:logout" %}>
+        <button type="submit">Log Out</button>
+    </form>
+{% endblock %}
